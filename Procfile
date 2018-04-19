@@ -1,1 +1,1 @@
-web: python cherrymusic --setup
+web: python cherrymusic --setup -p $PORT
