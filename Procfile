@@ -1,1 +1,1 @@
-web: python cherrymusic --setup --port 8080
+web: python cherrymusic --setup
