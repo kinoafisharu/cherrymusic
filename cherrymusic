@@ -31,6 +31,7 @@
 import cmbootstrap
 cmbootstrap.bootstrap()
 import cherrymusicserver
+import os
 
 
 welcomeMessage = _("""
@@ -170,6 +171,9 @@ parser.add_argument('--changepassword', dest='changepassword', nargs=2, metavar=
 ConfigOptions.addShortcutOption(parser, ('--port', '-p'), key='server.port', type=int, help='Set the port the server will listen to.')
 ConfigOptions.addGeneralOption(parser, ('--conf', '-c'), help='Override configuration values.')
 
+dirspot = os.getcwd()
+print ('Curent directory: '+dirspot)
+
 
 if __name__ == "__main__":
     import sys
@@ -232,5 +236,6 @@ if __name__ == "__main__":
         cherrymusicserver.update_filedb(args.update)
         if not args.setup:
             sys.exit(0)
+
 
     cherrymusicserver.start_server(ConfigOptions.configdict)
